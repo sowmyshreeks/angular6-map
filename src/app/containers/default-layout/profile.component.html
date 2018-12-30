@@ -1,0 +1,86 @@
+<div mat-dialog-content *ngIf="data.userData === 'profile'">
+  <form>
+    <div class="login-form">
+      <div class="login-logo">
+          <img class="align-content img-responsive" src="./../../../assets/img/avatars/6.jpg" width=180rem; height=180rem; alt="logo" style="border-radius:50%;margin:0px 11%;">
+      </div>
+    </div>
+      <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" placeholder="sowmya">
+      </div>
+      <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="sowmya.shree@goalsr.com">
+      </div>
+      <div class="form-group">
+          <label>Phone Number</label>
+          <input type="number" class="form-control" placeholder="1234567890">
+      </div>
+      
+      <button type="button" class="btn btn btn-flat m-b-30 m-t-30" style="background-color:#DD8643;color:white;">Update</button>
+</form>
+</div>
+
+
+<div mat-dialog-content *ngIf="data.update === 'updateProfile'">
+  <form>
+    <!-- <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" placeholder="sowmya">
+    </div> -->
+      <div class="form-group">
+          <label>Update Email</label>
+          <input type="email" class="form-control">
+      </div>
+      <div class="form-group">
+          <label>Update Phone Number</label>
+          <input type="number" class="form-control">
+      </div>
+      <p>Note:Send a Request to Admin to Change</p>
+      <button type="button" class="btn btn btn-flat m-b-30 m-t-30">Send Request</button>
+</form>
+</div>
+
+<div mat-dialog-content *ngIf="data.password === 'changePassword'">
+    <form>
+      <!-- <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="sowmya">
+      </div> -->
+        <div class="form-group">
+            <label>Old password</label>
+            <input type="text" class="form-control" placeholder="Enter old password">
+        </div>
+        <div class="form-group">
+            <label>New password</label>
+            <input type="text" class="form-control" placeholder="Enter new password">
+        </div>
+        <div class="form-group">
+            <label>Confirm password</label>
+            <input type="text" class="form-control" placeholder="Confirm password">
+        </div>
+        <button type="button" class="btn btn btn-flat m-b-30 m-t-30" style="background-color:#DD8643;color:white;">Change Password</button>
+  </form>
+  </div>
+
+<div mat-dialog-content *ngIf="data.settings === 'appSettings'">
+    <ul class="list-group">
+        <li class="list-group-item">Dark Mode
+          <label class="switch" style="float:right;">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </li>
+        <li class="list-group-item">Automatic Updates
+            <label class="switch" style="float:right;">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </li>
+        <li class="list-group-item">Update Signature
+          <span style="float:right;margin-right: 6px;"><i class="fa fa-upload" aria-hidden="true"></i></span>
+        </li>
+        <li class="list-group-item">Mode of Transport</li>
+      </ul>
+</div>

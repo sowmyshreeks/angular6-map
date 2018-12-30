@@ -1,0 +1,12 @@
+.main .container-fluid {
+    padding: 0px 63px;
+}
+.table {
+    margin-top: 0px !important;
+    width: 100%;
+    margin: 1rem;
+    background-color: transparent;
+}
+.table thead th {
+    border:none !important;
+}

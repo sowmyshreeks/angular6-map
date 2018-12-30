@@ -1,0 +1,30 @@
+<!-- <div class="animated fadeIn"> -->
+    <div class="row" style="background-color:white;">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Mode/Method</th>
+                <th>Distance</th>
+                <th>Amount</th>
+                <th>Approved Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let list of tableList">
+                <td>{{list.type}}</td>
+                <td>
+                    <i class="fas fa-bus" *ngIf="list.mode == 'bus'"></i>
+                    <i class="fas fa-car" *ngIf="list.mode == 'car'"></i>
+                    <i class="fas fa-motorcycle" *ngIf="list.mode == 'two_wheeler'"></i>
+                    <i class="fas fa-utensils" *ngIf="list.mode == 'food'"></i>
+                    <i class="fas fa-suitcase" *ngIf="list.mode == 'stay'"></i>
+                 &nbsp;{{list.method}}</td>
+                <td>{{list.distance}}</td>
+                <td><i class="fas fa-rupee-sign"></i>&nbsp;{{list.amount}}</td>
+                <td><i class="fas fa-rupee-sign"></i>&nbsp;{{list.approved_amount}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+<!-- </div> -->

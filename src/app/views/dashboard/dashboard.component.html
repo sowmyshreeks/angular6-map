@@ -1,0 +1,294 @@
+<div class="animated fadeIn" style="margin-top:2em;">
+  <div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+                <div class="card-body" style="background-color: #DD8643;border-radius:5px;">
+                        <div class="card-left pt-1 float-left">
+                            <h3 class="mb-0 fw-r">235</h3>
+                            <p class="text-light ">Open Visits</p>
+                        </div>
+                        <div class="card-right float-right text-right">
+                            <i class="icon-lg fas fa-map-marker-alt"></i>
+                        </div>
+                </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body" style="background-color: #DD8643;border-radius:5px;">
+                <div class="card-left pt-1 float-left">
+                    <h3 class="mb-0 fw-r">2356</h3>
+                    <p class="text-light ">All Visits</p>
+                </div>
+                <div class="card-right float-right text-right">
+                    <i class="icon-lg fas fa-map-marked-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+                <div class="card-body" style="background-color: #DD8643;border-radius:5px;">
+                        <div class="card-left pt-1 float-left">
+                            <h3 class="mb-0 fw-r">2335</h3>
+                            <p class="text-light ">Total Clients</p>
+                        </div>
+                        <div class="card-right float-right text-right">
+                            <i class="icon-lg fas fa-hands-helping"></i>
+                        </div>
+                </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+                <div class="card-body" style="background-color: #DD8643;border-radius:5px;">
+                        <div class="card-left pt-1 float-left">
+                            <h3 class="mb-0 fw-r">$&nbsp;335</h3>
+                            <p class="text-light ">Expenses</p>
+                        </div>
+                        <div class="card-right float-right text-right">
+                            <i class="icon-lg far fa-money-bill-alt"></i>
+                        </div>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="orders" style="margin-top:10px;">
+  <div class="row">
+        <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">List of Visits</strong>
+                    </div>
+                    <div class="table-stats order-table ov-h">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                        <th>Company Name</th>
+                                        <!-- <th>Contact N0.</th> -->
+                                        <th>Location</th>
+                                        <th>purpose of Visit</th>
+                                        <!-- <th>Status</th> -->
+                                        <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr *ngFor = "let list of tableList" >
+                                            <td>{{list.companyName}},<br>
+                                            {{list.contactNo}}</td>
+                                            <!-- <td></td> -->
+                                            <td>{{list.location}}</td>
+                                            <td>{{list.purposeofVisit}}</td>
+                                            <!-- <td>{{list.status}}</td> -->
+                                            <td>
+                                                  <button type="button" class="btn btn-primary btn-xs" style="padding:0px;margin-right:5px;" (click)="checkIn(list)">CheckIn</button>
+                                                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" style="padding:0px;">Skip</button>
+                                                  <!-- <button type="button" class="btn btn-danger" style="padding:0px;">Skiped</button> -->
+                                                 
+                                                  <!-- <button type="button" class="btn btn-danger" style="padding:0px;" *ngIf="list.status == 'Progress'">{{getTimerValue()}}</button> -->
+                                                  <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalTab" style="padding:0px;" *ngIf="list.status == 'Progress'">Chekout</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                        </table>
+                    </div> <!-- /.table-stats -->
+                </div>
+            </div>
+
+      <!-- <div class="col-xl-6 ">
+          <div class="card">
+              <div class="card-header">
+                  <h4 class="box-title">List of Visits </h4>
+              </div>
+              <div class="card-body">
+                  <div class="table-stats order-table ov-h">
+                      <table class="table">
+                          <thead class="thead-light">
+                              <tr>
+                                  <th class="serial">#</th>
+                                  <th class="avatar">Avatar</th>
+                                  <th>ID</th>
+                                  <th>Company Name</th>
+                                  <th>Contact N0.</th>
+                                  <th>Location</th>
+                                  <th>Action</th>
+                                  <th>Action</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td class="serial">1.</td>
+                                  <td>#123</td>
+                                  <td>Goalsr</td>
+                                  <td>123456789</td>
+                                  <td>Banglore</td>
+                                  <td>
+                                        <button type="button" class="btn btn-primary btn-xs" style="padding:0px;">CheckIn</button>
+                                  </td>
+                                  <td>
+                                        <button type="button" class="btn btn-danger" style="padding:0px;">{{getTimerValue()}}</button>
+                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalTab" style="padding:0px;">Chekout</button>
+                                  </td>
+                              </tr>
+                              <tr>
+                                    <td class="serial">2.</td>
+                                    <td>#123</td>
+                                    <td>Goalsr</td>
+                                    <td>123456789</td>
+                                    <td>Banglore</td>
+                                    <td>
+                                          <button type="button" class="btn btn-primary btn-xs" style="padding:0px;">CheckIn</button>
+                                    </td>
+                                    <td>
+                                          <button type="button" class="btn btn-danger btn-xs" style="padding:0px;">Skip</button>
+                                          <button type="button" class="btn btn-primary btn-xs" style="padding:0px;">Chekout</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                        <td class="serial">3.</td>
+                                        <td>#123</td>
+                                        <td>Goalsr</td>
+                                        <td>123456789</td>
+                                        <td>Banglore</td>
+                                        <td>
+                                              <button type="button" class="btn btn-primary btn-xs" style="padding:0px;">CheckIn</button>
+                                        </td>
+                                        <td>
+                                               <button type="button" class="btn btn-danger btn-xs" style="padding:0px;">Skip</button>
+                                              <button type="button" class="btn btn-primary btn-xs" style="padding:0px;">Chekout</button>
+                                        </td>
+                                    </tr>
+                          </tbody>
+                      </table>
+                  </div> 
+              </div>
+          </div>
+      </div>   -->
+
+      <div class="col-xl-6">
+          <div class="card"style="height:69vh;padding:none;">
+            <div class="card-header">
+                    <strong class="card-title">Map</strong>
+                </div>
+              <div class="card-body" >
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319" width="100%" height="200em" frameborder="0" style="border:0"></iframe>
+              </div>
+          </div>
+          <!-- <div id="googleMap" style="width:100%;height:400px;"></div> -->
+          
+      </div> <!-- /.col-md-4 -->
+  </div>
+</div>
+  <!--/.card-->
+</div>
+
+<!--model-->
+<div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h5 class="modal-title">Reason for Skip:</h5>
+            </div>
+            
+            <!-- Modal body -->
+                
+            <div class="modal-body">
+            <div class="form-check">
+                  <label class="form-check-label" for="check2">
+                   <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">Ending the day
+                  </label>
+               </div>
+             <div class="form-check">
+               <label class="form-check-label">
+                 <input type="checkbox" class="form-check-input">Customer busy
+               </label>
+            </div>
+             <div class="form-check">
+          <label class="form-check-label" for="check2">
+            <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">Customer not Available
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">Others
+          </label>
+        </div>
+        <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Skip
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Assign to Admin
+      </label>
+    </div>
+    <div class="form-check disabled">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Schedule Tomorrow
+      </label>
+    </div>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-right:56%;">Close</button>
+              <button type="button" class="btn btn-success" data-dismiss="modal">save</button>
+            </div>
+            
+          </div>
+        </div>
+</div>
+
+<div class="modal fade" id="myModalTab">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h5 class="modal-title">Checkout Details:</h5>
+            </div>
+            
+            <!-- Modal body -->
+                
+            <div class="modal-body">
+                    <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link active" data-toggle="tab" href="#home">Details</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#menu1">Check List</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#menu2">TimeLine</a>
+                            </li>
+                          </ul>
+                        
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                            <div id="home" class="container tab-pane active"><br>
+                              <h3>HOME</h3>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <div id="menu1" class="container tab-pane fade"><br>
+                              <h3>Menu 1</h3>
+                              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div id="menu2" class="container tab-pane fade"><br>
+                              <h3>Menu 2</h3>
+                              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                            </div>
+                          </div>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" style=" margin-right:56%;" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success" data-dismiss="modal">save</button>
+            </div>
+            
+          </div>
+        </div>
+</div>
